@@ -40,7 +40,7 @@ export async function createUser(username, password, name, email) {
 }
 
 // 로그인
-export async function login(username) {
+export async function findByUsername(username) {
     const user = users.find((user) => user.username === username)
     return user
 }
