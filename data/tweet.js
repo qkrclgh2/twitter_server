@@ -1,27 +1,21 @@
 let tweets = [
     {
         id:'1',
-        name:'김사과',
-        username:'apple',
+        userId: '1',
         text:'안녕하세요',
-        createdAt: Date.now().toString(),
-        url:'https://postfiles.pstatic.net/MjAyMzAzMjhfNjcg/MDAxNjc5OTM0ODI4NjY4.zqXlbKy0qFpg0N-EkZGAZjwDA3kVbS1M6s_nICANQXkg.CcYuyKTOWe4y32jCzlO89z3CHrroRKCvRotWOLzDWdkg.JPEG.wjdtjddms02/KakaoTalk_20230313_205738868.jpg?type=w966'
+        createdAt: Date.now().toString()
     },
     {
         id:'2',
-        name:'반하나',
-        username:'banana',
+        userId:'2',
         text:'반갑습니다',
-        createdAt: Date.now().toString(),
-        url:'https://postfiles.pstatic.net/MjAyMzAzMjhfNjcg/MDAxNjc5OTM0ODI4NjY4.zqXlbKy0qFpg0N-EkZGAZjwDA3kVbS1M6s_nICANQXkg.CcYuyKTOWe4y32jCzlO89z3CHrroRKCvRotWOLzDWdkg.JPEG.wjdtjddms02/KakaoTalk_20230313_205738868.jpg?type=w966'
+        createdAt: Date.now().toString()
     },
     {
         id:'3',
-        name:'오렌지',
-        username:'orange',
+        userId:'1',
         text:'첫 트윗!',
-        createdAt: Date.now().toString(),
-        url:'https://postfiles.pstatic.net/MjAyMzAzMjhfNjcg/MDAxNjc5OTM0ODI4NjY4.zqXlbKy0qFpg0N-EkZGAZjwDA3kVbS1M6s_nICANQXkg.CcYuyKTOWe4y32jCzlO89z3CHrroRKCvRotWOLzDWdkg.JPEG.wjdtjddms02/KakaoTalk_20230313_205738868.jpg?type=w966'
+        createdAt: Date.now().toString()
     }
 ]
 
