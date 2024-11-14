@@ -2,6 +2,7 @@ import express from 'express'
 import tweetsRouter from './router/tweets.js'
 import authRouter from './router/auth.js'
 import { config } from './config.js'
+import { initSocket } from './connection/socket.js'
 
 
 const app = express()
@@ -15,4 +16,5 @@ app.use((req, res, next) => {
     res.sendStatus(404)
 })
 
-app.listen(config.host.port)
+const server = app.listen(config.host.port)
+initSocket(server)
