@@ -21,5 +21,12 @@ export const config = {
     },
     host: {
         port: parseInt(required('HOST_PORT', 8080))
+    },
+    db: { // MySQL에 연결
+        host: required('DB_HOST'),
+        user: required('DB_USER'),
+        password: required('DB_PASSWORD'),
+        database: required('DB_DATABASE'),
+        port: required('DB_PORT')
     }
 }
