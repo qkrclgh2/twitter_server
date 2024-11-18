@@ -41,7 +41,7 @@ export async function updateTweet(req, res, next) {
     }
 
     const updated = await tweetRepository.update(id, text)
-    res.status(201).json(tweet)    
+    res.status(201).json(updated)    
 }
 
 // 트윗을 삭제하는 함수
