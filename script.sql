@@ -24,7 +24,9 @@ create table tweets(
     foreign key(userId) references users(id)
 );
 
+alter table tweets add column updatedAt datetime;
+
 select * from tweets;
 
 SELECT u.id, u.username, u.name, u.url, tw.userId, tw.text, tw.createdAt FROM users as u
-JOIN tweets as tw ON u.id = tw.userId;
+JOIN tweets as tw ON u.id = tw.userId ORDER BY tw.createdAt DESC;

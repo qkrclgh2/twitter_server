@@ -22,7 +22,7 @@ export const config = {
     host: {
         port: parseInt(required('HOST_PORT', 8080))
     },
-    db: { // MySQL에 연결
+    db: { // MySQL에 연결 -> sequelize 사용 하기 전
         host: required('DB_HOST'),
         user: required('DB_USER'),
         password: required('DB_PASSWORD'),

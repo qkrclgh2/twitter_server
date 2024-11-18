@@ -3,7 +3,8 @@ import tweetsRouter from './router/tweets.js'
 import authRouter from './router/auth.js'
 import { config } from './config.js'
 import { initSocket } from './connection/socket.js'
-// import { db } from './db/database.js'
+// import { db } from './db/database.js'    -> sequelize 사용전
+import { sequelize } from './db/database.js'
 import cors from 'cors'
 
 
@@ -25,6 +26,8 @@ app.use((req, res, next) => {
 })
 
 // 연결 확인
-// db.getConnection().then((connection) => console.log(connection))
-const server = app.listen(config.host.port)
-initSocket(server)
+// db.getConnection().then((connection) => console.log(connection))    -> sequelize 사용전
+sequelize.sync().then(()=> {
+    const server = app.listen(config.host.port)
+    initSocket(server)
+})
