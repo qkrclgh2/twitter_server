@@ -4,7 +4,7 @@ import authRouter from './router/auth.js'
 import { config } from './config.js'
 import { initSocket } from './connection/socket.js'
 // import { db } from './db/database.js'    -> sequelize 사용전
-import { sequelize } from './db/database.js'
+import { connectDB } from './db/database.js'
 import cors from 'cors'
 
 
@@ -25,9 +25,8 @@ app.use((req, res, next) => {
     res.sendStatus(404)
 })
 
-// 연결 확인
-// db.getConnection().then((connection) => console.log(connection))    -> sequelize 사용전
-sequelize.sync().then(()=> {
-    const server = app.listen(config.host.port)
-    initSocket(server)
-})
+connectDB()
+    .then(() => {
+        const server = app.listen(config.host.port)
+        initSocket(server)
+    }).catch(console.error)
