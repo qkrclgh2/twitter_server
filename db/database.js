@@ -1,12 +1,16 @@
 import { config } from '../config.js'
-import MongoDb from 'mongodb'
-
-let db
+import Mongoose from 'mongoose'
 
 export async function connectDB() {
-    return MongoDb.MongoClient.connect(config.db.host).then((client) => {
-        db = client.db()
+    return Mongoose.connect(config.db.host)
+}
+
+export function useVirtualId(schema) {
+    schema.virtual('id').get(function () {
+        return this._id.toString()
     })
+    schema.set('toJSON', { virtual: true })
+    schema.set('toObject', { virtual: true })
 }
 
 export function getUsers() {
